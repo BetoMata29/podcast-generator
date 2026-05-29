@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     python3-yaml \
     git
 
-COPY --from=builder /usr/bin/feed.py /usr/bin/feed.py
+COPY feed.py /usr/bin/feed.py
 
 COPY entrypoint.sh /entrypoint.sh
 RUN sed -i 's/\r//' /entrypoint.sh

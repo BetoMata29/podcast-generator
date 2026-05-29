@@ -9,5 +9,6 @@ RUN apt-get update && apt-get install -y \
 COPY feed.py /usr/bin/feed.py
 
 COPY entrypoint.sh /entrypoint.sh
+RUN sed -i 's/\r//' /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
